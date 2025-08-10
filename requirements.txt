@@ -1,3 +1,4 @@
+python==3.12.4
 accelerate==1.10.0
 acres==0.5.0
 aiofiles==24.1.0
