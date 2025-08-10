@@ -1,3 +1,5 @@
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 import asyncio
 import streamlit as st
 from src.financial_rag.parsers.parser import MultimodalParser
