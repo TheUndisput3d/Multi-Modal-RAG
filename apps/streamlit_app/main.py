@@ -1,7 +1,9 @@
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 import asyncio
 import streamlit as st
 from src.financial_rag.parsers.parser import MultimodalParser
-from src.financial_rag.retrieval.engine import RetrievalEngine
+from src.financial_rag.retriengine import RetrievalEngine
 import tempfile
 
 from apps.streamlit_app.components.file_uploader import file_uploader_section
