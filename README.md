@@ -2,6 +2,12 @@
 
 A multimodal document processing system for financial data extraction and intelligent querying. Transforms PDF documents into queryable knowledge through advanced parsing, vector storage, and retrieval-augmented generation.
 
+## Live Demo
+
+**[Try the Live Application →](https://fmultimodalrag.streamlit.app/)**
+
+*No setup required - test the system immediately with your own PDF documents*
+
 ## Features & Key Compnents
 
 - **Multimodal Processing**: Extracts text, tables, and images from PDF documents with BLIP vision-language model for automatic image captioning
@@ -31,16 +37,31 @@ financial_rag/
 ├── data/
 │   ├── documents/              # Input PDF files
 │   ├── extracted_images/       # Extracted figures
+│   └── vectorstore_index/      # Cached embeddings
 └── requirements.txt
 ```
-
 
 ## Quick Start
 
 ### Prerequisites
 
+Create a conda environment with Python 3.12.11:
+```bash
+conda create -n financial_rag python=3.12.11
+conda activate financial_rag
+```
+
+Install Python dependencies:
 ```bash
 pip install -r requirements.txt
+```
+
+Install additional system packages:
+```bash
+# For Ubuntu/Debian systems
+cat packages.txt | xargs sudo apt-get install -y
+
+# For other systems, manually install packages listed in packages.txt
 ```
 
 Create `.env` file:
@@ -67,6 +88,7 @@ Upload PDF documents through the Streamlit interface and query them interactivel
 
 ### CLI Interface
 Place PDF documents in `data/document/` directory and run batch processing with pre-configured queries.
+
 
 ## Visual Documentation
 
