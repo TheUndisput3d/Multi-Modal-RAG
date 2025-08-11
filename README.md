@@ -11,6 +11,30 @@ A multimodal document processing system for financial data extraction and intell
 - **Configuration Management**: Centralized settings with secure API key handling and optimized parameters
 - **Dual Interface**: Command-line and web-based Streamlit interfaces
 
+## Technical Architecture
+
+The system employs a modular three-stage pipeline. Document processing extracts multimodal content using multiple extraction strategies. Vector storage creates searchable embeddings optimized for financial terminology. Query processing generates precise answers through hybrid retrieval and prompt engineering.
+
+## Project Structure
+
+```
+financial_rag/
+├── apps/
+│   ├── cli/                    # Command line interface
+│   └── streamlit_app/          # Web interface
+├── src/
+│   └── financial_rag/
+│       ├── config/             # Configuration settings
+│       ├── parsers/            # Document parsing logic
+│       ├── retrieval/          # Search and retrieval engine
+│       └── utils/              # Helper functions
+├── data/
+│   ├── documents/              # Input PDF files
+│   ├── extracted_images/       # Extracted figures
+└── requirements.txt
+```
+
+
 ## Quick Start
 
 ### Prerequisites
@@ -36,26 +60,6 @@ python -m streamlit run apps/streamlit_app/main.py
 python -m apps.cli.main
 ```
 
-## Project Structure
-
-```
-financial_rag/
-├── apps/
-│   ├── cli/                    # Command line interface
-│   └── streamlit_app/          # Web interface
-├── src/
-│   └── financial_rag/
-│       ├── config/             # Configuration settings
-│       ├── parsers/            # Document parsing logic
-│       ├── retrieval/          # Search and retrieval engine
-│       └── utils/              # Helper functions
-├── data/
-│   ├── documents/              # Input PDF files
-│   ├── extracted_images/       # Extracted figures
-│   └── vectorstore_index/      # Cached embeddings
-└── requirements.txt
-```
-
 ## Usage
 
 ### Web Interface
@@ -63,10 +67,6 @@ Upload PDF documents through the Streamlit interface and query them interactivel
 
 ### CLI Interface
 Place PDF documents in `data/document/` directory and run batch processing with pre-configured queries.
-
-## Technical Architecture
-
-The system employs a modular three-stage pipeline. Document processing extracts multimodal content using multiple extraction strategies. Vector storage creates searchable embeddings optimized for financial terminology. Query processing generates precise answers through hybrid retrieval and prompt engineering.
 
 ## Visual Documentation
 
